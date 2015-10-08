@@ -1,0 +1,163 @@
+<!--                                                                         -->
+<!--               createU@UCSC - a product by Alex Price                    -->
+<!--                built in Austin, TX & Santa Cruz, CA                     -->
+<!--                   email me at alex@alexprice.co                         -->
+<!--                                                                         -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CreateU@UCSC</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="css/compressed/index.css">
+    <link rel="stylesheet" type="text/css" href="css/compressed/jquery.fullpage.css" />
+    <link rel="stylesheet" type="text/css" href="css/compressed/component.css" />
+    <link rel="stylesheet" type="text/css" href="css/compressed/normalize.css" />
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <!-- insert favicon code -->
+
+    <script type="text/javascript" src="js/smooth-scroll.min.js" ></script>
+    <script type="text/javascript">smoothScroll.init();</script>
+    <script src="js/modernizr.custom.js"></script>
+</head>
+
+
+<body id="home">
+
+    <div class="v-center">
+    <section class="shark animated-super-slowly fadeIn v-center-child" data-anchor="about" id="hero">
+        <h1>What are you doing after UCSC?</h1>
+        <span id="subtext" class="long">LET'S FIND OUT TOGETHER</span>
+        <br><br>
+    </section>
+    </div>
+
+    <div class="v-center">
+    <section class="v-center-child" id="project-panel" data-anchor="projects">
+        <div class="project-wrapper">
+            <div class="project">
+                <div class="header"><h3>VEX Volt</h3></div>
+                <div class="body"><span>A simple and beautiful tool for measuring VEX battery voltage.
+                    <br><a href="http://alexprice.co/projects/volt">more</a>
+                </span><br>
+                <span class="seperator">&mdash;</span></div>
+            </div>
+        </div><div class="project-wrapper">
+            <div class="project">
+                <a href="http://alexprice.co/#projects"><img src="media/robots.jpg" /></a>
+            </div>
+        </div>
+    </section>
+    </div>
+
+    <div class="v-center" id="contact">
+    <section class="shark v-center-child" data-anchor="contact">
+
+        <div id="chatter-instructions">
+            <h2>Contact</h2>
+            <span>Want to work together? <br><br>
+              <a class="chattertoggle">
+                <div class="button mark">
+                  <i class="fa fa-comment"></i>
+                </div>
+              </a>
+              <a class="calltoggle callmemaybe" href="tel:+15127300930">
+                <div class="button mark">
+                  <i class="fa fa-phone"></i>
+                </div>
+              </a>
+            </span>
+        </div>
+
+        <div id="call">
+          <span>Link not working? Here's my number:</span>
+          <a href="tel:+15127300930">(512) 730-0930</a>
+        </div>
+
+        <form id="chatter" class="chatter hidden"  autocomplete="off"  method="post" name="myemailform" action="php/mailer.php">
+            <div class="chatter-inner">
+                <ol class="questions">
+                    <li class="who?">
+                        <span><label for="q1">Who're you?</label></span>
+                        <input size="22" id="name" name="name" type="text" placeholder="John Doe" autocomplete="off"/>
+                    </li>
+                    <li class="where?">
+                        <span><label for="q2">Where are you? <span class="paren">(city)</span></label></span>
+                        <input size="22" id="where" name="where" type="text" placeholder="Austin, TX" autocomplete="off"/>
+                    </li>
+                    <li class="what?">
+                        <span><label for="q3">What're you up to?</label></span>
+                        <input size="22" id="what" name="message" type="text" placeholder="Your project in a sentence." autocomplete="off">
+                    </li>
+                    <li class="email?">
+                        <span><label for="q4">Who should I email?</label></span>
+                        <input size="22" id="email" name="email" type="text" placeholder="john@doe.com" autocomplete="off"/>
+                    </li>
+                </ol>
+
+                <button class="next"></button>
+                <input type='hidden' name='context' value="chatter-home" />
+                <button class="submit" type="submit">Fire away!</button>
+
+                <div class="controls">
+                    <button class="next"></button>
+                    <div class="progress"></div>
+                    <span class="number">
+                        <span class="number-current"></span>
+                        <span class="number-total"></span>
+                    </span><br><br>
+                    <span class="error-message"></span>
+                </div>
+            </div>
+
+            <span class="final-message">
+                <div class="finished">
+                    <h2>Rad. </h2>
+                    <span>All done - I'll have something in your inbox before tomorrow.<br>
+                        <span class="paren"><a href="http://giphy.com/embed/i6cC4H3eF8Pqo?html5=true">
+                            Here's a gif while you wait.</a></span>
+                    </span>
+                </div>
+            </span>
+
+        </form>
+
+        <br><br>
+    </section>
+    </div>
+
+    <div class="douchebag_safari"> <!-- breaks safari + chrome autofill algorithms -->
+        <input class="js-clear_field" tabindex="-1" name="e-mail" type="email">
+        <input class="js-clear_field" tabindex="-1" name="Ecom_User_Password" type="password">
+    </div>
+
+    <script src="js/classie.js"></script>
+    <script src="js/stepsForm.js"></script>
+    <script>
+        var theForm = document.getElementById( 'chatter' );
+            theForm.setAttribute( "autocomplete", "off" );
+        new stepsForm( theForm, {
+            onSubmit : function( form ) {
+                classie.addClass( theForm.querySelector( '.chatter-inner' ), 'hide' );
+                form.submit();
+                var messageEl = theForm.querySelector( '.final-message' );
+                classie.addClass( messageEl, 'show' );
+            }
+        });
+    </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-63630411-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+</body>
+
+</html>
